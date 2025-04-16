@@ -7,19 +7,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class App {
     public static void main(String[] args) {
-        // Optional: set ChromeDriver path if not in system PATH
-        // System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
+        
 
         WebDriver driver = new ChromeDriver();
 
         try {
             driver.get("https://the-internet.herokuapp.com/login");
 
-           //this is for logging in
             WebElement username = driver.findElement(By.id("username"));
             WebElement password = driver.findElement(By.id("password"));
             username.sendKeys("tomsmith");
-            password.sendKeys("SuperSecretPassword!");
+            password.sendKeys("SecretPassword!");
 
             WebElement loginButton = driver.findElement(By.cssSelector("button[type='submit']"));
             loginButton.click();
